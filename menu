@@ -1,0 +1,105 @@
+package tugaspraktikum3_3;
+
+import java.util.Scanner;
+
+public class chooseMenu {
+
+    Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        chooseMenu object = new chooseMenu();
+        object.menu();
+    }
+
+    public void menu() {
+        int inputUser;
+        do {
+            System.out.println("========== MENU ===========");
+            System.out.println("0. EXIT");
+            System.out.println("1. THE VOLUME OF CUBOID");
+            System.out.println("2. THE VOLUME OF BALL");
+            System.out.println("3. THE VOLUME OF CONE");
+            System.out.println("4. THE VOLUME OF CYLINDER");
+            System.out.print("PLEASE INSERT YOUR ANSWER : ");
+            inputUser = input.nextInt();
+            switch (inputUser) {
+                case 1:
+                    cuboid();
+                    break;
+                case 2:
+                    ball();
+                    break;
+                case 3:
+                    cone();
+                    break;
+                case 4:
+                    cylinder();
+                    break;
+            }
+            if (inputUser > 5) {
+                System.out.println("SORRY YOUR CHOICE ARE NOT FOUND !!");
+            }
+        } while (inputUser != 0);
+        System.out.println("THANKS FOR USE THIS PROGRAM :)");
+    }
+
+    // THE VOLUME OF CUBOID 
+    void cuboid() {
+        System.out.println("===================================");
+        System.out.println("==== THE VOLUME OF CUBOID =====");
+        System.out.print("length  : ");
+        double length = input.nextDouble();
+        System.out.print("wide    : ");
+        double wide = input.nextDouble();
+        System.out.print("height   : ");
+        double height = input.nextDouble();
+        double volume = length * wide * height;
+        System.out.printf("the result is %.2f cm^3", volume);
+        System.out.println("");
+    }
+
+    // VOLUME OF BALL 
+    void ball() {
+        System.out.println("===================================");
+        System.out.println("===== THE VOLUME OF BALL ======");
+        System.out.print("circle radius : ");
+        double r = input.nextDouble();
+        final double phi = 3.14;
+        double r3 = Math.pow(r, 3);
+        double volume = r3 * (4.0 / 3) * phi;
+        System.out.printf("hasilnya adalah %.2f cm^3", volume);
+        System.out.println("");
+    }
+
+    // THE VOLUME OF CONE 
+    void kerucut() {
+        System.out.println("===================================");
+        System.out.println("==== THE VOLUME OF CONE ====");
+        System.out.print("circle radius  : ");
+        double r = masukkan.nextDouble();
+        System.out.print("height       : ");
+        double height = input.nextDouble();
+        final double phi = 3.14;
+        double r2 = Math.pow(r, 2);
+        double area = phi * r2;
+        double volume = area * (1.0 / 3) * height;
+        System.out.printf("the volume is %.2f cm^3", volume);
+        System.out.println("");
+    }
+
+    // THE VOLUME OF CYLINDER
+    void silinder() {
+        System.out.println("===================================");
+        System.out.println("=== THE VOLUME OF CYLINDER ====");
+        System.out.print("circle radius : ");
+        double r = masukkan.nextDouble();
+        System.out.print("height : ");
+        double height = input.nextDouble();
+        final double phi = 3.14;
+        double r2 = Math.pow(r, 2);
+        double area = phi * r2;
+        double volume = area * height;
+        System.out.printf("the volume is %.2f cm^3", volume);
+        System.out.println("");
+    }
+}
